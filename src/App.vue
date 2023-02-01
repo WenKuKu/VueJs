@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <h1 class="text-red-500">My First Vue App</h1>
-    
-  </div>
+
+  <barnavicon></barnavicon>
+
 </template>
 
 <script>
-export default {
-  name: 'App',
-}
+
+import barnavicon from "./components/barnavicon.vue";
+
 </script>
 
-<style  scoped>
-</style>
+<style></style>
