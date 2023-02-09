@@ -4,7 +4,7 @@
       <div class="flex">
         <div v-for="(item, index) in BarnavIcone" :key="index">
           <li
-            class="text-stone-600 h-32 w-32 rounded-xl ml-6 mt-6 text-xs flex justify-center items-center flex-col"
+            class="text-stone-600 h-32 w-40 rounded-xl ml-6 mt-6 text-xs flex justify-center items-center flex-col"
             :class="[item.color]"
           >
             <img
@@ -21,16 +21,30 @@
     </section>
 
     <section>
-      <div class="bg-white relative m-6 p-3 rounded-xl h-52 w-96">
-        <ul>
-          Statistics
-        </ul>
-        <ul class="h-52 w-full" id="main"></ul>
-      </div>
+    <div class="flex">
+      <ul class="bg-white relative m-6 p-2  rounded-xl h-52 w-96">
+        <li>
+          Statisticss
+        </li>
+        <ul class="h-52 w-full -mt-11 " id="main"></ul>
+      </ul>
+
+      <!-- Center -->
+
+      <ul class="bg-white relative m-6 p-3 rounded-xl h-52 w-72 ">
+        <li>
+          Course Activites
+        </li>
+        <ul class="h-52 w-full -mt-2 " id="lain"></ul>
+      </ul>
+    </div>
+   
     </section>
 
     <section>
-      <div></div>
+      <div class="h-full w-60 bg-white">
+      
+      </div>
     </section>
 
     <section>
@@ -46,33 +60,97 @@ import TotalCoursesIcon from "../../assets/icon/Course Assign.png";
 import FacultyRoomIcon from "../../assets/icon/Room.png";
 import * as echarts from "echarts";
 import { onMounted } from "@vue/runtime-core";
+
+//Chart bar
+
 onMounted(() => {
   var myChart = echarts.init(document.getElementById("main"));
   myChart.setOption({
-    xAxis: {
-    type: 'category',
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    tooltip: {
+      trigger: "axis",
+      axisPointer: {
+        type: "shadow",
+      },
+    },
+    grid: {
+      left: "3%",
+      right: "4%",
+      bottom: "3%",
+      containLabel: true,
+    },
+    xAxis: [
+      {
+        type: "category",
+        data: ["2017", "2018", "2019", "2020", "2021", "2022"],
+        axisTick: {
+          alignWithLabel: true,
+        },
+      },
+    ],
+    yAxis: [
+      {
+        type: "value",
+      },
+    ],
+    series: [
+      {
+        name: "Direct",
+        type: "bar",
+        barWidth: "35%",
+        data: [
+          190,
+          650,
+          400,
+          {
+            value: 650,
+            itemStyle: {
+              color: "#DB00FF",
+            },
+          },
+          800,
+          600,
+        ],
+      },
+    ],
+  });
+});
+
+// //Chart pie
+
+onMounted(() => {
+  var myChart = echarts.init(document.getElementById("lain"));
+  myChart.setOption({
+    tooltip: {
+    trigger: 'item'
   },
-  yAxis: {
-    type: 'value'
+  legend: {
+    top: '5%',
+    left: 'center'
   },
   series: [
     {
+      name: 'Access From',
+      type: 'pie',
+      radius: ['30%', '60%'],
+      avoidLabelOverlap: false,
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 15,
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
       data: [
-        120,
-        {
-          value: 200,
-          itemStyle: {
-            color: '#a90000'
-          }
-        },
-        150,
-        80,
-        70,
-        110,
-        130
-      ],
-      type: 'bar'
+        { value: 1000, name: 'Prosess' },
+        { value: 250, name: 'In Process' },
+      ]
     }
     ],
   });
