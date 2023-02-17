@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-24 bg-white items-center justify-between flex p-7 font-semibold text-xl "
+    class="w-full h-24 bg-white items-center justify-between flex p-7 font-semibold text-xl drop-shadow-md"
   >
     <section>
       <div>Hello Pro!</div>
@@ -49,13 +49,25 @@
           Owen KuKu
           <p>KuKu999net@gmail.com</p>
         </div>
-        <ul class="flex justify-center items-center h-7 w-7 ml-3 mt-3 mr-4 cursor-pointer">
-          <img class="bg-gray-200 rounded-full p-1 " src="../assets/icon/Doorbell.png" alt="" />
-          <img class="bg-gray-200 rounded-full m-1 p-1" src="../assets/icon/Settings.png" alt="" />
+        <ul
+          class="flex justify-center items-center h-7 w-7 ml-3 mt-3 mr-4 cursor-pointer"
+        >
+          <img
+            class="bg-gray-200 rounded-full p-1"
+            src="../assets/icon/Doorbell.png"
+            alt=""
+          />
+          <img
+            class="bg-gray-200 rounded-full m-1 p-1"
+            src="../assets/icon/Settings.png"
+            alt=""
+          />
         </ul>
       </div>
     </section>
   </div>
 </template>
 
-<script></script>
+<script setup>
+
+</script>

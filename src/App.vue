@@ -1,16 +1,16 @@
 <template>
-  <div class="flex h-screen w-full">
+  <div class="flex h-screen  ">
     <!-- navbar -->
-    <section class="flex  ">
+    <section class="flex">
       <div><NavbarIcon></NavbarIcon></div>
     </section>
     <!-- headbar -->
-    <section class="flex flex-col w-full h-full">
+    <section class="flex flex-col w-full ">
       <nav class="w-full h-24 flex flex-col ">
         <div><ProFile></ProFile></div>
       </nav>
       <!-- router view-->
-      <div class="h-full overflow-auto ">
+      <div class="overflow-auto bg-fuchsia-100 h-full ">
         <router-view></router-view>
       </div>
     </section>
